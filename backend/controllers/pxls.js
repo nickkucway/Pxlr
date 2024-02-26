@@ -20,7 +20,7 @@ const db = require('../models')
 ---------------------------------------------------------- */
 // Index Route (GET/Read): Will display all pxls
 router.get('/:gameId', function (req, res) {
-    db.Comment.find({ gameId: req.params.gameId })
+    db.Pxl.find({ gameId: req.params.gameId })
         .then(pxls => res.json(pxls))
 })
 

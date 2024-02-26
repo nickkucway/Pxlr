@@ -1,7 +1,7 @@
 // Require the Mongoose package
 const mongoose = require('mongoose');
 
-// Create a schema to define the properties of the comment collection
+// Create a schema to define the properties of the pxl collection
 const pxlSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
