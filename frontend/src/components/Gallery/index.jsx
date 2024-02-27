@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import Card from '../Card'
 
-export default function Gallery({ countries, setCountries, refreshQueue, updateDetails }) {
+export default function Gallery({ games, setGames, refreshQueue, updateDetails }) {
     const [query, setQuery] = useState('')
 
     function handleSubmit(event) {
         // prevent the form from reloading the page
         event.preventDefault()
         // clear the previous gallery's data
-        setCountries([])
+        setGames([])
         // query the API with the user's input
-        refreshQueue(`https://restcountries.com/v3.1/name/${query}`)
+        refreshQueue(`https://www.giantbomb.com/api/games/?api_key=3444d80238f7ab96fccbd62cf1f9b06bda8b15af&format=json&filter=name:${query}&limit=50`)
     }
 
     return (
@@ -21,7 +21,7 @@ export default function Gallery({ countries, setCountries, refreshQueue, updateD
                 <input
                     className="box-border p-2 w-3/5 rounded-md border border-gray-300 focus:outline-none focus:border-gray-500"
                     name="search"
-                    placeholder="Search for a country!"
+                    placeholder="Search for a Game!"
                     value={query}
                     onChange={event => setQuery(event.target.value)} />
                 <button
@@ -33,7 +33,7 @@ export default function Gallery({ countries, setCountries, refreshQueue, updateD
         </div>
 
         <div className="w-4/5 mt-10 mx-auto xl:columns-4 lg:columns-3 md:columns-2">
-              {countries.length > 0 ? countries.map(country => <Card key={country.ccn3} country={country} updateDetails={updateDetails}/>) : <p className="text-xl text-center">Your country is loading...</p>}
+              {games.length > 0 ? games.map(game => <Card key={game.id} game={game} updateDetails={updateDetails}/>) : <p className="text-xl text-center">Search for a game to query results...</p>}
         </div>
         </>    
     )

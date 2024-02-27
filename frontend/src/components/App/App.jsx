@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import DetailsPage from '../DetailsPage'
+import Gallery from '../Gallery'
+
 
 export default function App() {
     // Store API data here
@@ -11,7 +13,7 @@ export default function App() {
         const res = await fetch(url)
         const data = await res.json()
         
-        setGames(data)
+        setGames(data.results)
     }
 
     // Query the API on component mount
@@ -31,7 +33,7 @@ export default function App() {
           </Link>
 
           <Routes>
-              <Route path='/' />
+              <Route path='/' element={<Gallery games={games} setGames={setGames} refreshQueue={getData} updateDetails={setDetailsData}/>}/>
               <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
 
           </Routes>
