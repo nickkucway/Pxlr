@@ -37,5 +37,4 @@ export default function Gallery({ games, setGames, refreshQueue, updateDetails }
         </div>
         </>    
     )
-
 }
