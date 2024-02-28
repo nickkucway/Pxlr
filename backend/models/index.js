@@ -13,4 +13,6 @@ db.on('connected', function () {
 // Export models and seed data to `server.js`
 module.exports = {
     Pxl: require('./pxl'),
+    User: require('./user')
+
 }

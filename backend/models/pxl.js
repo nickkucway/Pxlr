@@ -6,7 +6,12 @@ const pxlSchema = new mongoose.Schema(
     {
         name: { type: String, required: true },
         content: { type: String, required: true },
-        gameId: { type: Number, required: true }
+        gameId: { type: Number, required: true },
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'User',
+        },
     },
     { timestamps: true }
 );
