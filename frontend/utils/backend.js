@@ -6,15 +6,30 @@ export async function getPxls(gameId) {
 }
 
 export async function postPxl(pxl) {
-    const { data } = await axios.post('/api/pxls', pxl)
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.post('/api/pxls', pxl, authHeader)
     return data
 }
 export async function updatePxl(pxl, id) {
-    const { data } = await axios.put(`/api/pxls/${id}`, pxl)
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.put(`/api/pxls/${id}`, pxl, authHeader)
     return data
 }
 
 export async function deletePxl(id) {
-    const { data } = await axios.delete(`/api/pxls/${id}`)
+    const authHeader = { headers: { 'Authorization': localStorage.getItem('userToken') } }
+    const { data } = await axios.delete(`/api/pxls/${id}`, authHeader)
+    return data
+}
+
+// singin / sign out routes 
+
+export async function signUp(user) {
+    const { data } = await axios.post('/api/users/signup', user)
+    return data
+}
+
+export async function logIn(user) {
+    const { data } = await axios.post('/api/users/login', user)
     return data
 }
