@@ -73,11 +73,11 @@ export default function pxlSection({ gameId }) {
     }
 
     return (
-        <div className='pxl-section bg-gray-300 rounded-t-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative'>
+        <div className='pxl-section bg-zinc-300 rounded-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative'>
             <h1 className='text-xl font-bold'>Pxls:</h1>
             <button
                 onClick={toggleCreateForm}
-                className="top-0 right-5 absolute text-white hover:bg-green-800 font-bold py-2 px-4 bg-green-900 rounded cursor-pointer mr-2"
+                className="top-0 right-5 absolute text-white hover:bg-fuchsia-800 font-bold py-2 px-4 bg-fuchsia-700 rounded cursor-pointer mr-2"
             >
                 {btnText}
             </button>
@@ -86,7 +86,7 @@ export default function pxlSection({ gameId }) {
             {
                 showCreateForm && <form
                     onSubmit={handleSubmit}
-                    className="bg-gray-100 rounded-lg p-4 my-4 border-gray-700 border-2 w-[80vw] mx-auto text-right">
+                    className="bg-gray-100 rounded-lg p-4 my-4  w-[80vw] mx-auto text-right">
                     <input
                         name="name"
                         className="px-2 py-1 w-full bg-gray-100"
@@ -104,7 +104,7 @@ export default function pxlSection({ gameId }) {
                     />
                     <button
                         type="submit"
-                        className="text-white hover:bg-gray-800 font-bold py-2 px-4 bg-gray-700 rounded cursor-pointer mr-2">
+                        className="text-white hover:bg-fuchsia-800 font-bold py-2 px-4 bg-fuchsia-700 rounded cursor-pointer mr-2">
                         Post
                     </button>
                 </form>

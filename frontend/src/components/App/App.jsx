@@ -3,6 +3,8 @@ import { Routes, Route, Link } from "react-router-dom";
 import DetailsPage from '../DetailsPage'
 import Gallery from '../Gallery'
 import AuthFormPage from '../AuthFormPage'
+import './styles.css'
+
 
 
 export default function App() {
@@ -54,9 +56,9 @@ export default function App() {
     return (
         <>
           
-            <nav className="flex items-center justify-between h-16 bg-gray-800 shadow-lg lg:px-9 md:px-6 px-3">
+            <nav className="flex items-center justify-between h-16 bg-zinc-900 shadow-lg lg:px-9 md:px-6 px-3">
                 <Link to="/">
-                    <h1 className="text-white font-bold md:text-3xl sm:text-2xl">PXLR</h1>
+                    <img className='max-w-24' src='https://i.imgur.com/lsdibaA.png'/>
                 </Link>
                 {authLink}
             </nav>

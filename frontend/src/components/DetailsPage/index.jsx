@@ -26,9 +26,9 @@ export default function DetailsPage(props) {
     if (Object.entries(game).length > 0){
         return (
             <>  
-                <div className="w-4/5 mx-auto min-h-[300px] max-w-[350px] p-[10px] rounded-lg flex-col content-center  mt-10 bg-gray-100">
+                <div className="w-4/5 mx-auto min-h-[300px] max-w-[350px] p-[10px] rounded-lg flex-col content-center  mt-10 bg-zinc-900">
                     <img className='w-full' src={game.image.original_url}/>
-                    <h3 className='text-xl text-center'>{game.name}</h3>
+                    <h3 className='text-xl text-center text-white'>{game.name}</h3>
                     
                 </div>
                 <PxlSection gameId={game.id} />
