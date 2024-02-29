@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import PxlSection from '../PxlSection'
+
 
 
 
@@ -29,6 +31,7 @@ export default function DetailsPage(props) {
                     <h3 className='text-xl text-center'>{game.name}</h3>
                     
                 </div>
+                <PxlSection gameId={game.id} />
 
 
             </>
