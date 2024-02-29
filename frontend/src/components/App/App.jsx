@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import DetailsPage from '../DetailsPage'
 import Gallery from '../Gallery'
+import AboutPage from '../AboutPage'
 import AuthFormPage from '../AuthFormPage'
 import './styles.css'
 
@@ -30,16 +31,22 @@ export default function App() {
 
     // Conditionally render the login/singup links and the logout button
     let authLink = <div className="flex lg:gap-5 md:gap-4 sm:gap-3 gap-2">
+        <Link to="/about">
+            <h2 className="text-white md:text-lg sm:text-md">About</h2>
+        </Link>
         <Link to="/auth/signup">
-            <h2 className="text-white md:text-lg sm:text-md">Sign Up</h2>
+            <h2 className="text-white md:text-lg sm:text-md">Sign-Up</h2>
         </Link>
         <Link to="/auth/login">
-            <h2 className="text-white md:text-lg sm:text-md">Log In</h2>
+            <h2 className="text-white md:text-lg sm:text-md">Log-In</h2>
         </Link>
     </div>
 
     if (loginStatus) {
         authLink = <div className="flex lg:gap-5 md:gap-4 sm:gap-3 gap-2">
+            <Link to="/about">
+                <h2 className="text-white md:text-lg sm:text-md">About</h2>
+            </Link>
 
             <button
                 className="text-white md:text-lg sm:text-md"
@@ -47,7 +54,7 @@ export default function App() {
                     localStorage.clear()
                     setLoginStatus(false)
                 }}>
-                Log Out
+                Log-Out
             </button>
         </div>
     }
@@ -60,6 +67,7 @@ export default function App() {
                 <Link to="/">
                     <img className='max-w-24' src='https://i.imgur.com/lsdibaA.png'/>
                 </Link>
+                
                 {authLink}
             </nav>
 
@@ -67,6 +75,7 @@ export default function App() {
               <Route path='/' element={<Gallery games={games} setGames={setGames} refreshQueue={getData} updateDetails={setDetailsData}/>}/>
               <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
               <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
+              <Route path="/about" element={<AboutPage />} />
 
           </Routes>
         </>
