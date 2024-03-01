@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Card from '../Card'
+import { getResults } from '../../../utils/backend'
 
-export default function Gallery({ games, setGames, refreshQueue, updateDetails }) {
+export default function Gallery({ games, setGames, updateDetails }) {
     const [query, setQuery] = useState('')
 
     function handleSubmit(event) {
@@ -10,7 +11,7 @@ export default function Gallery({ games, setGames, refreshQueue, updateDetails }
         // clear the previous gallery's data
         setGames([])
         // query the API with the user's input
-        refreshQueue(`https://www.giantbomb.com/api/games/?api_key=${import.meta.env.VITE_API_KEY}&format=json&filter=name:${query}&limit=50`)
+        getResults(query).then(data=>{setGames(data.data.results);console.log(data)})
     }
 
     return (

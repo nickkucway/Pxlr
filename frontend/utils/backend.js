@@ -36,12 +36,12 @@ export async function logIn(user) {
 
 //api calls
 
- async function getResults(query) {
-    const games = await axios.get(`https://www.giantbomb.com/api/games/?api_key=${import.meta.env.VITE_API_KEY}&format=json&filter=name:${query}&limit=50`)
-    return games.data
+export async function getResults(query) {
+    const data = await axios.get(`/api/search/${query}`)
+    return data
 }
 
-async function getDetails(gameId) {
-    const game = await axios.get(`https://www.giantbomb.com/api/game/${gameId}/?api_key=${import.meta.env.VITE_API_KEY}&format=json`)
-    return game.data
+export async function getDetails(id) {
+    const data = await axios.get(`/api/${id}`)
+    return data
 }
