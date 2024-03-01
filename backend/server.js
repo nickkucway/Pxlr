@@ -42,6 +42,21 @@ app.use('/api/pxls', pxlsCtrl)
 // to handle all routes that begin with `localhost:3000/api/users`
 app.use('/api/users', usersCtrl)
 
+// set api results for CORS
+app.get('/api/search/:query', (req, res) =>{
+    db.getResults(req.params.query)
+        .then(data => {
+            res.json(data.data)
+        })
+})
+
+app.get('/api/:id', (req, res) =>{
+    db.getDetails(req.params.id)
+        .then(data => {
+            res.json(data.data)
+        })
+})
+
 
 /* Tell the app to listen on the specified port
 ---------------------------------------------------------- */

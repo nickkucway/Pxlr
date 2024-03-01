@@ -10,7 +10,7 @@ export default function Gallery({ games, setGames, refreshQueue, updateDetails }
         // clear the previous gallery's data
         setGames([])
         // query the API with the user's input
-        refreshQueue(`https://www.giantbomb.com/api/games/?api_key=3444d80238f7ab96fccbd62cf1f9b06bda8b15af&format=json&filter=name:${query}&limit=50`)
+        refreshQueue(`https://www.giantbomb.com/api/games/?api_key=${import.meta.env.VITE_API_KEY}&format=json&filter=name:${query}&limit=50`)
     }
 
     return (

@@ -33,3 +33,15 @@ export async function logIn(user) {
     const { data } = await axios.post('/api/users/login', user)
     return data
 }
+
+//api calls
+
+ async function getResults(query) {
+    const games = await axios.get(`https://www.giantbomb.com/api/games/?api_key=${import.meta.env.VITE_API_KEY}&format=json&filter=name:${query}&limit=50`)
+    return games.data
+}
+
+async function getDetails(gameId) {
+    const game = await axios.get(`https://www.giantbomb.com/api/game/${gameId}/?api_key=${import.meta.env.VITE_API_KEY}&format=json`)
+    return game.data
+}

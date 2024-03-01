@@ -41,9 +41,14 @@ const authMiddleware = (req, res, next) => {
 
 /* Routes
 ---------------------------------------------------------- */
-// Index Route (GET/Read): Will display all pxls
+// Index Route (GET/Read): Will display all pxls for specific game
 router.get('/:gameId', function (req, res) {
     db.Pxl.find({ gameId: req.params.gameId })
+        .then(pxls => res.json(pxls))
+})
+// Index Route (GET/Read): Will display all pxls
+router.get('/', function (req, res) {
+    db.Pxl.find({ })
         .then(pxls => res.json(pxls))
 })
 

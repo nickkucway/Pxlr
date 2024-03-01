@@ -17,8 +17,7 @@ export default function App() {
 
     async function getData(url) {
         const res = await fetch(url)
-        const data = await res.json()
-        
+        const data = await res.json()        
         setGames(data.results)
     }
 
