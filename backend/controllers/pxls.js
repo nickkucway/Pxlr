@@ -46,6 +46,7 @@ router.get('/:gameId', function (req, res) {
     db.Pxl.find({ gameId: req.params.gameId })
         .then(pxls => res.json(pxls))
 })
+
 // Index Route (GET/Read): Will display all pxls
 router.get('/', function (req, res) {
     db.Pxl.find({ })

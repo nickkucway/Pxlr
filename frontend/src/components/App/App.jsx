@@ -4,6 +4,7 @@ import DetailsPage from '../DetailsPage'
 import Gallery from '../Gallery'
 import AboutPage from '../AboutPage'
 import AuthFormPage from '../AuthFormPage'
+import PxlDashboard from '../PxlDashboard'
 import './styles.css'
 
 
@@ -69,14 +70,15 @@ export default function App() {
                 
                 {authLink}
             </nav>
+            
 
-          <Routes>
-              <Route path='/' element={<Gallery games={games} setGames={setGames} refreshQueue={getData} updateDetails={setDetailsData}/>}/>
-              <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
-              <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
-              <Route path="/about" element={<AboutPage />} />
+            <Routes>
+                <Route path='/' element={<Gallery games={games} setGames={setGames} refreshQueue={getData} updateDetails={setDetailsData}/>}/>
+                <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
+                <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
+                <Route path="/about" element={<AboutPage />} />
 
-          </Routes>
+            </Routes>
         </>
         
     )

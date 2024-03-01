@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+export async function getPxlIndex(){
+    const { data } =  await axios.get('api/pxls/')
+    return data
+}
+
 export async function getPxls(gameId) {
     const { data } = await axios.get(`/api/pxls/${gameId}`)
     return data
@@ -45,3 +50,4 @@ export async function getDetails(id) {
     const data = await axios.get(`/api/${id}`)
     return data
 }
+

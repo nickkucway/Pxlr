@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Card from '../Card'
 import { getResults } from '../../../utils/backend'
+import PxlDashboard from '../PxlDashboard'
 
 export default function Gallery({ games, setGames, updateDetails }) {
     const [query, setQuery] = useState('')
@@ -17,6 +18,7 @@ export default function Gallery({ games, setGames, updateDetails }) {
     return (
 
         <>
+        {PxlDashboard}
         <div className="p-[25px] m-[25px] bg-zinc-900 rounded-lg">
             <form onSubmit={handleSubmit} className="mt-4 text-center">
                 <input
