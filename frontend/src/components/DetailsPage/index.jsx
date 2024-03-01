@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { getDetails } from '../../../utils/backend'
+
 import PxlSection from '../PxlSection'
 
 
@@ -13,13 +15,8 @@ export default function DetailsPage(props) {
 
     useEffect(() => {
         if (!game.id) {
-            async function getGameFromAPI() {
-                const res = await fetch(`https://www.giantbomb.com/api/game/${params.gameId}/?api_key=3444d80238f7ab96fccbd62cf1f9b06bda8b15af&format=json`)
-                const data = await res.json() 
-                setGame(data.results)
-
-            }
-            getGameFromAPI()
+            getDetails(params.gameId).then(data=>{setGame(data.data.results)})
+            
         }
     }, [])
 
