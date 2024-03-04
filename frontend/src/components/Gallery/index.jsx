@@ -18,7 +18,8 @@ export default function Gallery({ games, setGames, updateDetails }) {
     return (
 
         <>
-        {PxlDashboard}
+        <PxlDashboard/>
+       
         <div className="p-[25px] m-[25px] bg-zinc-900 rounded-lg">
             <form onSubmit={handleSubmit} className="mt-4 text-center">
                 <input
