@@ -4,7 +4,7 @@ import { updatePxl, deletePxl } from "../../../utils/backend"
 export default function Pxl({ data, refreshPxls }) {
     const [showEditForm, setShowEditForm] = useState(false)
     const [editFormData, setEditFormData] = useState({
-        name: data.name,
+
         content: data.content
     })
 
@@ -39,14 +39,7 @@ export default function Pxl({ data, refreshPxls }) {
             <form
                 onSubmit={handleSubmit}
                 className="bg-gray-100 rounded-lg p-4 my-4  w-[80vw] mx-auto text-right">
-                <input
-                    name="name"
-                    className="px-2 py-1 w-full bg-gray-100"
-                    placeholder="Your name"
-                    value={editFormData.name}
-                    onChange={handleInputChange}
-                />
-                <br />
+
                 <textarea
                     name="content"
                     className="p-2 my-2 h-[100px] w-full bg-gray-100"
@@ -73,9 +66,17 @@ export default function Pxl({ data, refreshPxls }) {
     } else {
         return (
             <div
-                className="bg-gray-100 rounded-lg p-4 my-4  w-[80vw] mx-auto">
-                <p className="font-bold">{data.userId}</p>
-                <p className="my-2">{data.content}</p>
+                className="bg-gray-100 rounded-lg p-4 my-4  w-[50vw] mx-auto">
+                <div>
+                    <div className="flex ">
+                        <img className='max-h-64' src={data.gameImg}/>
+                        <div>
+                            <p className="font-bold">{data.userId}</p>
+                            <p className="my-2">{data.content}</p>
+
+                        </div>
+                    </div>
+                </div>
                 <div className="flex justify-end">
                     <button
                         onClick={() => { setShowEditForm(true) }}

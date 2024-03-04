@@ -2,12 +2,12 @@ import { useState, useEffect } from "react"
 import { postPxl, getPxls } from "../../../utils/backend"
 import Pxl from "../Pxl"
 
-export default function pxlSection({ gameId }) {
+export default function pxlSection({ gameId, gameImg, gameTitle }) {
     // Save pxls queried from the database in state
     const [pxls, setPxls] = useState([])
     const [showCreateForm, setShowCreateForm] = useState(false)
     const [createFormData, setCreateFormData] = useState({
-        name: '',
+        
         content: ''
     })
 
@@ -43,13 +43,13 @@ export default function pxlSection({ gameId }) {
         event.preventDefault()
         // clear the form
         setCreateFormData({
-            name: '',
+            
             content: ''
         })
         // close the form
         setShowCreateForm(false)
         // create the pxl in the backend
-        postPxl({ ...createFormData, gameId: gameId })
+        postPxl({ ...createFormData, gameId: gameId, gameImg: gameImg, gameTitle: gameTitle })
             .then(() => refreshPxls())
     }
 
@@ -87,13 +87,7 @@ export default function pxlSection({ gameId }) {
                 showCreateForm && <form
                     onSubmit={handleSubmit}
                     className="bg-gray-100 rounded-lg p-4 my-4  w-[80vw] mx-auto text-right">
-                    <input
-                        name="name"
-                        className="px-2 py-1 w-full bg-gray-100"
-                        placeholder="Your name"
-                        value={createFormData.name}
-                        onChange={handleInputChange}
-                    />
+                    
                     <br />
                     <textarea
                         name="content"

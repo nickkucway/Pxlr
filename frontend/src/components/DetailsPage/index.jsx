@@ -41,7 +41,7 @@ export default function DetailsPage(props) {
                             </div>
                         }
                 </div>
-                <PxlSection gameId={game.id} />
+                <PxlSection gameId={game.id} gameImg={game.image.original_url} gameTitle={game.name} />
 
 
             </>
