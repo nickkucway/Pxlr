@@ -25,6 +25,23 @@ export default function Gallery({ games, setGames, updateDetails }) {
             </div>
 
             <div className='basis-3/5'>
+            <div className=' p-[25px] flex flex-wrap content-center justify-between mt-5 mx-auto'>
+                    <div className="bg-zinc-900 hover:bg-fuchsia-800 p-5 w-1/3">
+                        <img className="mx-auto h-20" src="https://i.imgur.com/IzIVN75.png"/>
+                        <h3 className='text-xl font-bold text-center text-white mt-5'>GAME</h3>
+                        <p className='text-white text-center'>Play your favorite games!</p>
+                    </div>
+                    <div className="bg-zinc-900 hover:bg-fuchsia-800 p-5 w-1/3">
+                        <img className="mx-auto h-20" src="https://i.imgur.com/ky0hpLs.png"/>
+                        <h3 className='text-xl font-bold text-center text-white mt-5'>SEARCH</h3>
+                        <p className='text-white text-center'>Find your favorite games!</p>
+                    </div>
+                    <div className="bg-zinc-900 hover:bg-fuchsia-800 p-5 w-1/3"> 
+                        <img className="mx-auto h-20" src="https://i.imgur.com/E4nKZlv.png"/>
+                        <h3 className='text-xl font-bold text-center text-white mt-5'>PXL</h3>
+                        <p className='text-white text-center'>Share your thoughts!</p>
+                    </div>
+                </div>
 
                 <div className="p-[25px] m-[25px] bg-zinc-900 rounded-lg">
                     <h1 className='text-xl font-bold text-center text-white '>Search for a game:</h1>
