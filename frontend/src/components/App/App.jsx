@@ -79,7 +79,7 @@ export default function App() {
                 <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
                 <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
                 <Route path="/about" element={<AboutPage />} />
-                {/* <Route path="/*" element={<NotFoundPage />} /> */}
+                <Route path="/*" element={<NotFoundPage />} />
 
 
             </Routes>
