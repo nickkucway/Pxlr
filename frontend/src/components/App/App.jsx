@@ -4,6 +4,7 @@ import DetailsPage from '../DetailsPage'
 import Gallery from '../Gallery'
 import AboutPage from '../AboutPage'
 import AuthFormPage from '../AuthFormPage'
+import NotFoundPage from '../NotFoundPage'
 import { getResults } from '../../../utils/backend'
 import './styles.css'
 
@@ -78,6 +79,8 @@ export default function App() {
                 <Route path="/details/:gameId" element={<DetailsPage game={detailsData} />} />
                 <Route path="/auth/:formType" element={<AuthFormPage setLoginStatus={setLoginStatus} />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/*" element={<NotFoundPage />} />
+
 
             </Routes>
         </>
