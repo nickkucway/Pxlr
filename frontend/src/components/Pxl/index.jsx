@@ -38,7 +38,7 @@ export default function Pxl({ data, refreshPxls }) {
         return (
             <form
                 onSubmit={handleSubmit}
-                className="bg-gray-100 rounded-lg p-4 my-4  w-[80vw] mx-auto text-right">
+                className="bg-gray-100 rounded-lg p-4 my-4  w-full mx-auto text-right">
 
                 <textarea
                     name="content"
@@ -66,14 +66,14 @@ export default function Pxl({ data, refreshPxls }) {
     } else {
         return (
             <div
-                className="bg-gray-100 rounded-lg p-4 my-4  w-[50vw] mx-auto">
+                className="bg-gray-100 rounded-lg p-4 my-4  w-full mx-auto">
                 <div>
-                    <div className="flex ">
-                        <img className='max-h-64' src={data.gameImg}/>
-                        <div>
-                            <p className="font-bold">{data.userId}</p>
-                            <p className="my-2">{data.content}</p>
-
+                    <div className="flex content-center items-center ">
+                        <img className='h-[125px] rounded-md' src={data.gameImg}/>
+                        <div className="p-4">
+                            <p className="font-bold">{data.gameTitle}</p>
+                            <p >user: {data.userId}</p>
+                            <p >{data.content}</p>
                         </div>
                     </div>
                 </div>
