@@ -26,7 +26,7 @@ export default function pxlDashboard() {
     // conditionally render pxls
     let pxlElements = [<p key='0' className='text-center'>No Pxls yet.</p>]
     if (pxls.length > 0) {
-        pxlElements = pxls.map(pxl => {
+        pxlElements = pxls.toReversed().map(pxl => {
             return <Pxl
                 key={pxl._id}
                 data={pxl}
