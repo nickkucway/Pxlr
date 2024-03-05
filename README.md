@@ -9,10 +9,10 @@ This project is a video game thought logging application called PXLR
 <details>
 <summary>:art:WireFrames:art:</summary>
 
-![movie-site-details](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/5825740e-e886-454e-8197-16334ae81820)
-![movie-site-homeindex](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/64314198-c760-495b-911b-d055c33833af)
-![movie-site-form](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/fee7b9fe-fa0a-4c86-8d74-e1af9e2aed7d)
-![movie-site-about](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/676bede6-6913-440c-9266-1d7381fa6fdf)
+![site-home](https://i.imgur.com/vrofcXk.png)
+![site-details](https://i.imgur.com/3Sptjym.png)
+![site-form](https://i.imgur.com/RM4qA20.png)
+![site-about](https://i.imgur.com/LmrxmSB.png)
 
 </details>
 
@@ -20,10 +20,10 @@ This project is a video game thought logging application called PXLR
 
 <summary>:desktop_computer:Finished App:desktop_computer:</summary>
 
-![screencapture-localhost-3000-2024-01-21-13_16_34](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/c979dd87-039b-4e10-bb74-e6c1ae80d4a3)
-![screencapture-localhost-3000-movies-2024-01-21-13_16_12](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/36d44f35-6579-487f-a057-a12b9edb8ea3)
-![screencapture-localhost-3000-movies-new-2024-01-21-13_16_51](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/6b57ae21-9367-420f-a62d-9a919226463b)
-![screencapture-localhost-3000-movies-65ad41c5c23e7ee1d78a6176-2024-01-21-13_16_19](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/48dd6f72-4770-422b-8269-efebcb1d581c)
+![screencapture-localhost-3000-2024-01-21-13_16_34](https://i.imgur.com/kYUkNUy.png)
+![screencapture-localhost-3000-movies-2024-01-21-13_16_12](https://i.imgur.com/s82XhUj.png)
+![screencapture-localhost-3000-movies-new-2024-01-21-13_16_51](https://i.imgur.com/wG8klGR.png)
+![screencapture-localhost-3000-movies-65ad41c5c23e7ee1d78a6176-2024-01-21-13_16_19](https://i.imgur.com/BiEcjTo.png)
 
 </details>
 
@@ -52,7 +52,7 @@ This project is a video game thought logging application called PXLR
 <details>
 <summary>ERD</summary>
 
-![erd](https://github.com/nickkucway/MEN-Stack-CRUD-App/assets/152036965/32b6b050-2039-4b1c-a18b-2fa474566271)
+![erd](https://i.imgur.com/65lTTFF.png)
 
 </details>
 
@@ -87,25 +87,37 @@ within the env file you will want to add the follow:
 
 ```
 PORT=3000
-MONGODBURI='your connection string here'
-APIKEY='tmdb apikey here'
-ON_HEROKU=false
+MONGODBURI=<your connection string here>
+JWT_SECRET_KEY='JwtS3cr3tK3Y'
+VITE_API_KEY=<your API key here>
 ```
 
 to sign up for mongo DB and get a connection string, visit: https://www.mongodb.com/
 
-to get an API key for TMDB, visit: https://developer.themoviedb.org/docs/getting-started
+to get an API key for giant bomb, visit: https://www.giantbomb.com/api/
 
-from here you can run:
+from here you will need to update the scripts section of package.json with:
 
 ```
-npm run dev
+"scripts": {
+    "backend": "nodemon backend/server.js",
+    "frontend": "vite",
+  }
+```
+
+from here you will need to split your terminal and run run:
+
+```
+npm run backend
+```
+```
+npm run frontend
 ```
 
 go to the following URL in your browser
 
 ```
-http://localhost:3000
+http://localhost:5173
 ```
 
 the app should now be running in your browser
@@ -116,7 +128,9 @@ the app should now be running in your browser
 
 <summary>User Stories</summary>
 
-As a fan of movies, I want to be able to log which movies I've seen on this app, and review them.
+As a fan of games, I want to be able to search for games I like
+
+As a user, I want to be able to leave a PXL about my favorite game. 
 
 As a hiring manager, I want to be able to see the way Nick built out this app.
 
@@ -126,7 +140,7 @@ As a hiring manager, I want to be able to see the way Nick built out this app.
 
 <summary>Trouble Shooting</summary>
 
-Still have an issue with the date defaulting to the current day when editing a movie release date.
+Still have some minor issues, would like to figure out how to get rid of the edit and delete buttons for PXLs NOT belonging to the user.
 
 </details>
 
@@ -134,16 +148,15 @@ Still have an issue with the date defaulting to the current day when editing a m
 
 <summary>:soon:Coming Next:soon:</summary>
 
-would like to add some kind of oauth to add users.
-
+Would like to build out a user profile page and expand upon the dashboard
 </details>
 
 <details>
 
 <summary>API </summary>
 
-for this app I used the TMDB Api
-https://developer.themoviedb.org/docs/getting-started
+for this app I used the Giant Bomb Api
+https://www.giantbomb.com/api/
 
 </details>
 
@@ -155,6 +168,8 @@ https://developer.themoviedb.org/docs/getting-started
   ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
   ![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
   ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
-  ![express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
   ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  ![express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+  ![react.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
   ![node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  
