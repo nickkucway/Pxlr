@@ -18,13 +18,13 @@ export default function Gallery({ games, setGames, updateDetails }) {
     return (
 
         <>
-        <div className='flex flex-row'>
-            <div className='basis-1/4 mt-[25px]' >
+        <div className='lg:flex flex-row'>
+            <div className='basis-2/5 mt-[25px]' >
                 <PxlDashboard/>
 
             </div>
 
-            <div className='basis-3/4'>
+            <div className='basis-3/5'>
 
                 <div className="p-[25px] m-[25px] bg-zinc-900 rounded-lg">
                     <h1 className='text-xl font-bold text-center text-white '>Search for a game:</h1>
@@ -45,7 +45,7 @@ export default function Gallery({ games, setGames, updateDetails }) {
                 </div>
 
                 <div className="w-4/5 mt-10 mx-auto xl:columns-4 lg:columns-3 md:columns-2">
-                    {games.length > 0 ? games.map(game => <Card key={game.id} game={game} updateDetails={updateDetails}/>) : <p className="text-xl text-center text-white">Search for a game to query results...</p>}
+                    {games.length > 0 ? games.map(game => <Card key={game.id} game={game} updateDetails={updateDetails}/>) : <p className="text-xl text-center text-white">Search for a game...</p>}
                 </div>
             </div>
         </div>
