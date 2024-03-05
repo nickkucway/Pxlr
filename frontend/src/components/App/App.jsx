@@ -4,7 +4,7 @@ import DetailsPage from '../DetailsPage'
 import Gallery from '../Gallery'
 import AboutPage from '../AboutPage'
 import AuthFormPage from '../AuthFormPage'
-import PxlDashboard from '../PxlDashboard'
+import { getResults } from '../../../utils/backend'
 import './styles.css'
 
 
@@ -24,6 +24,7 @@ export default function App() {
 
     // Query the API on component mount
     useEffect(() => {
+        getResults('like a dragon').then(data=>{setGames(data.data.results)})
         if (localStorage.getItem('userToken')) {
             setLoginStatus(true)
         }

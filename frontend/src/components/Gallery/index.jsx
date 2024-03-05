@@ -12,7 +12,7 @@ export default function Gallery({ games, setGames, updateDetails }) {
         // clear the previous gallery's data
         setGames([])
         // query the API with the user's input
-        getResults(query).then(data=>{setGames(data.data.results);console.log(data)})
+        getResults(query).then(data=>{setGames(data.data.results)})
     }
 
     return (
