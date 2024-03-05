@@ -39,8 +39,8 @@ export default function pxlDashboard() {
 
     return (
         <>
-            <h1 className='text-xl font-bold text-center text-white '>Recent PXLs:</h1>
-            <div className='pxl-section  rounded-lg p-4 pb-10 mt-4 mx-10 space-y-4 relative '>
+            <h1 className='text-3xl font-bold text-center text-white '>Recent PXLs:</h1>
+            <div className='pxl-section  rounded-lg p-4 pb-10  mx-10 space-y-4 relative '>
                 {pxlElements}
             </div>
         </>
