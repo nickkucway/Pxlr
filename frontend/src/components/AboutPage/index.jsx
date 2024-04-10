@@ -4,7 +4,7 @@ export default function AboutPage() {
             <div className="w-3/5 mx-auto mt-10">
                 <img className="rounded-lg" src="https://i.imgur.com/TJ4uBtF.png"/>
                 <h1 className='text-2xl font-bold text-center text-white mt-5'>About PXLR:</h1>
-                <p className='text-white mt-5'>PXLR is a revolutionary social media platform tailored specifically for video game enthusiasts. It serves as a vibrant hub where gamers from all corners of the globe can connect, share experiences, and immerse themselves in the world of gaming culture. Post your first PXL today!
+                <p className='text-white mt-5'>PXLR is a revolutionary social media platform tailored specifically for video game enthusiasts. It serves as a vibrant hub where gamers from all corners of the globe can connect, share experiences, and immerse themselves in the world of gaming culture and give their opionions on the latest games. Post your first PXL today!
                 </p>
                 <h1 className='text-2xl font-bold text-center text-white mt-5 '>How To PXL:</h1>
                 <div className='flex flex-wrap content-center justify-between mt-5 mx-auto mb-10'>
